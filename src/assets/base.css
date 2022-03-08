@@ -1,0 +1,35 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --vt-c-azulmarinho-soft: #242d3f;
+  --vt-c-cinza-soft: #c8c9ce;
+  --vt-c-cinza: #838494;
+  --vt-c-azulmarinho: #041425;
+  --vt-c-azul: #187ce6;
+
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #f8f8f8;
+  --vt-c-white-mute: #f2f2f2;
+
+  --vt-c-black: #181818;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--vt-c-azulmarinho-soft);
+  --color-text: var(--vt-c-cinza-soft);
+}
+
+.badge-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  margin: 2px;
+}
+
+.badge-light {
+  color: #212529 !important;
+  background-color: #f8f9fa;
+  margin: 2px;
+}
+
