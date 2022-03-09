@@ -2,6 +2,8 @@
 import HeaderPage from '../components/HeaderPage.vue';
 import Tags from '../components/Tags.vue';
 import { useRoute } from 'vue-router';
+import QuestaoContent from '../components/QuestaoContent.vue';
+import QuestaoAnswers from '../components/QuestaoAnswers.vue';
 
 const route = useRoute();  
 const id = route.params.id;
@@ -10,38 +12,13 @@ const id = route.params.id;
 
 <template>
   <HeaderPage :tittle="String(question.titulo)"/>
-  <div class="row border-bottom mb-2">
-    <div class="row mb-2">
-      <div class="col-md-1 border-sidebar-right">
-
-      </div>
-      <div class="col-md-11">
-        <div>
-          {{question.conteudo}}
-        </div>
-      </div>
-    </div>
-    <div class="row mb-2">
-      <div class="col-md-11 offset-md-1">
-        <Tags :tags="question.tags" :badge_color="String('badge-secondary')"/>
-      </div>
-    </div>
-  </div>
+  <QuestaoContent :question="question"/>
   <div class="row border-bottom mb-2">
     <div class="col-md-12">
       <h1 class="h4">{{ question.respostas.length }} respostas</h1>
     </div>
   </div>
-  <div class="row border-bottom mb-2 pb-2" v-for="resposta in question.respostas" v-bind:key="resposta.id">
-    <div class="col-md-1 border-sidebar-right">
-
-      </div>
-      <div class="col-md-11">
-        <div>
-          {{resposta.conteudo}}
-        </div>
-      </div>
-  </div>
+  <QuestaoAnswers :respostas="question.respostas"/>
 </template>
 
 <script>
