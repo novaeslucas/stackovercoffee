@@ -1,5 +1,5 @@
 <template>
-    <span class="badge badge-light" v-for="tag in tags" v-bind:key="tag.id">
+    <span :class="['badge', badge_color]" v-for="tag in tags" v-bind:key="tag.id">
         {{ tag.descricao }}
     </span>
 </template>
@@ -12,6 +12,10 @@
         type: [Array, Object],
         required: false,
       },
+      badge_color: {
+        type: String,
+        required: true,
+      }
     },
   }
 </script>

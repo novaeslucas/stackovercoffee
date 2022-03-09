@@ -19,12 +19,12 @@ import Tags from './Tags.vue';
           <div class="col-md-10">
               <div class="row">
                 <div class="col-md-12">
-                    <router-link :to="{ name: 'questao', params: { id: question.id } }" class="text-white">{{ question.pergunta }}</router-link>
+                    <router-link :to="{ name: 'questao', params: { id: question.id } }" class="text-white">{{ question.titulo }}</router-link>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-8">
-                  <Tags :tags="question.tags"/>
+                  <Tags :tags="question.tags" :badge_color="String('badge-light')"/>
                 </div>
                 <div class="col-md-4 text-right font-size-80">
                   {{ question.usuario.login }} | {{ $filters.formatarData(question.data) }}

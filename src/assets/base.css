@@ -45,3 +45,10 @@ a:hover {
   text-decoration: none;
 }
 
+.border-sidebar-right {
+  border-right: solid 1px lightgrey;
+}
+
+.border-sidebar-left {
+  border-left: solid 1px lightgrey;
+}

@@ -1,7 +1,7 @@
 <template>
   <header>
     <nav class="navbar navbar-dark bg-dark justify-content-between">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/">
         <img src="./../assets/coffee-icon.png" width="43" height="30" class="d-inline-block align-top" alt="">
         Stackover Coffee
       </a>
