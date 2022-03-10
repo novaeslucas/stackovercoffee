@@ -1,5 +1,6 @@
 <script setup>
-import Tags from '../components/Tags.vue';
+import Tags from './/Tags.vue';
+import CardUser from './CardUser.vue';
 </script>
 
 <template>
@@ -8,7 +9,7 @@ import Tags from '../components/Tags.vue';
             <div class="col-md-1 border-sidebar-right">
 
             </div>
-            <div class="col-md-11">
+            <div class="col-md-11 pb-3 pt-3">
             <div>
                 {{question.conteudo}}
             </div>
@@ -19,6 +20,7 @@ import Tags from '../components/Tags.vue';
             <Tags :tags="question.tags" :badge_color="String('badge-secondary')"/>
             </div>
         </div>
+        <CardUser :login="question.usuario.login" :data_criacao="$filters.formatarDataHora(question.data)"/>
     </div>
 </template>
 

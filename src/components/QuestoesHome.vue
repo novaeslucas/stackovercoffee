@@ -19,11 +19,11 @@ import Tags from './Tags.vue';
           </div>
           <div class="col-md-10">
             <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-12 pb-2 pt-2">
                   <router-link :to="{ name: 'questao', params: { id: question.id } }" class="text-white">{{ question.titulo }}</router-link>
               </div>
             </div>
-            <div class="row">
+            <div class="row pb-2 pt-2">
               <div class="col-md-8">
                 <Tags :tags="question.tags" :badge_color="String('badge-light')"/>
               </div>
