@@ -24,12 +24,12 @@ import Tags from '../components/Tags.vue';
 
 <script>
 export default {
-    name: "questaoComponente",
+    name: "questaoContent",
     props: {
       question: {
         type: Object,
         required: true,
       },
-    }
+    },
 }
 </script>

@@ -4,6 +4,7 @@ import Tags from '../components/Tags.vue';
 import { useRoute } from 'vue-router';
 import QuestaoContent from '../components/QuestaoContent.vue';
 import QuestaoAnswers from '../components/QuestaoAnswers.vue';
+import QtdAnswers from '../components/QtdAnswers.vue';
 
 const route = useRoute();  
 const id = route.params.id;
@@ -11,14 +12,16 @@ const id = route.params.id;
 </script>
 
 <template>
-  <HeaderPage :tittle="String(question.titulo)"/>
-  <QuestaoContent :question="question"/>
-  <div class="row border-bottom mb-2">
-    <div class="col-md-12">
-      <h1 class="h4">{{ question.respostas.length }} respostas</h1>
-    </div>
+  <div v-if="question.id > 0">
+    <HeaderPage :tittle="String(question.titulo)"/>
+    <QuestaoContent :question="question"/>
+    <QtdAnswers :qtd="qtdAnswers"/>
+    <QuestaoAnswers :respostas="respostas"/>
   </div>
-  <QuestaoAnswers :respostas="question.respostas"/>
+  <div v-else>
+    <p>Carregando...</p>
+  </div>
+  
 </template>
 
 <script>
@@ -27,13 +30,17 @@ const id = route.params.id;
 	  data() {
       return {
         question: Object,
+        qtdAnswers: String,
+        respostas: [],
       }
     },
-    created() {
+    mounted() {
       fetch("/api/questao/" + this.id)
-        .then((res) => res.json())
-        .then((json) => {
+        .then(res => res.json())
+        .then(json => {
           this.question = json.question
+          this.qtdAnswers = String(json.question.respostas.length)
+          this.respostas = json.question.respostas
         })
     },
     

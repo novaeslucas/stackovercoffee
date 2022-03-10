@@ -16,7 +16,7 @@ export default {
     name: "questaoAnswers",
     props: {
       respostas: {
-        type: Object,
+        type: Array,
         required: true,
       },
     }
