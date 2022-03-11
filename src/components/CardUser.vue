@@ -1,13 +1,13 @@
 <template>
     <div class="row mb-2">
         <div class="col-md-4 offset-md-8">
-            <div class="card text-black bg-light mb-3">
+            <div class="card text-black bg-light mb-1">
                 <div class="card-body fs-14px">
                     <div class="row">
                       <p>Perguntado em {{ data_criacao }}</p>
                     </div>
                     <div class="row">
-                      <p>{{ login }}</p>
+                      <div>{{ login }}</div>
                     </div>
                 </div>
             </div>
