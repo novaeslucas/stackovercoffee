@@ -1,9 +1,14 @@
 <template>
     <div class="row mb-2">
-        <div class="col-md-11 offset-md-1">
+        <div class="col-md-4 offset-md-8">
             <div class="card text-black bg-light mb-3">
-                <div class="card-body">
-                    Criado por {{ login }} em {{ data_criacao }}
+                <div class="card-body fs-14px">
+                    <div class="row">
+                      <p>Perguntado em {{ data_criacao }}</p>
+                    </div>
+                    <div class="row">
+                      <p>{{ login }}</p>
+                    </div>
                 </div>
             </div>
         </div>
