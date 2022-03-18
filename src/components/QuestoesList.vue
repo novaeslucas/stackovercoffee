@@ -44,7 +44,7 @@ import Tags from './Tags.vue';
 
 <script>
   export default {
-    name: "questoesHome",
+    name: "questoesList",
 
     data() {
       return {
